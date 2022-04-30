@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import Child from "../component/child";
 
 
 class Home extends React.Component{
@@ -18,6 +19,7 @@ class Home extends React.Component{
         
         console.log("Run when state or props update")
         console.log("state====>",state)
+        return null
     
        
     }
@@ -42,6 +44,10 @@ class Home extends React.Component{
 
 
     }
+
+    componentWillUnmount(){
+        console.log("component Khalas")
+    }
     myval=()=>{
         this.setState({
             c:0
@@ -60,6 +66,8 @@ class Home extends React.Component{
                 <h2>getSnapshotBeforeUpdate when props update it take snapshot before update</h2>
                 <h2>componentdidupdate </h2>
 
+
+                <h2>{this.state.c <5 && <Child/>}</h2>
                 <h1>{this.state.c}</h1>
                 <button onClick={()=>this.setState({c:this.state.c+1})}>Inc</button>
 
