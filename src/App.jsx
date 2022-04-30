@@ -4,10 +4,10 @@ import AppRouter  from './config/router.js'
 class App extends React.Component{
     render(){
         return(
-    
             <AppRouter />
         )
     }
+
 }
 
     
